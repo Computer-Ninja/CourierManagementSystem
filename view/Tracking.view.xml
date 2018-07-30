@@ -4,11 +4,11 @@
       <Button type="Default" text="Login" press="onLogin" icon="sap-icon://visits" />
     </headerContent>
     <content>
-      <VBox class="centerposition" >
-        <Input id="TrackingID" type="Text" required="true" placeholder="Tracking ID"
-                valueState="None" valueStateText="Invalid Tracking ID" />
-        <Button width="100%" type="Emphasized" text="Track Courier" press="onTrackCourier" icon="sap-icon://locate-me"/>
-      </VBox>
+    	<VBox class="centerposition" >
+	        <Input id="TrackingID" type="Text" required="true" placeholder="Tracking ID"
+	                valueState="None" valueStateText="Invalid Tracking ID" />
+	        <Button width="100%" type="Emphasized" text="Track Courier" press="onOrderTracking" icon="sap-icon://locate-me"/>
+    	</VBox>
     </content>
     <footer>
         <Toolbar>

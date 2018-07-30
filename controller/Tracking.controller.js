@@ -1,6 +1,7 @@
 sap.ui.define([
-  "sap/ui/core/mvc/Controller"
-], function(Controller) {
+  "sap/ui/core/mvc/Controller",
+  "sap/ui/model/json/JSONModel"
+], function(Controller,JSONModel) {
   "use strict";
 
   return Controller.extend("com.sap.technophilia.courier.controller.Tracking", {
@@ -58,6 +59,46 @@ sap.ui.define([
     onLoginCancel: function() {
       var oThis = this;
       oThis._oLoginDialog.close();
+    },
+    
+    _fetchTracker: function() {
+      var tid = this.getView().byId("TrackingID").getValue();
+      var oThis = this;
+      var oModel = [
+        {
+          "Location" : "CHENNAI",
+          "Date and Time" : "28/07/28 3:25PM",
+		  "visible": false
+        },
+        {
+          "Location" : "BANGALORE",
+          "Date and Time" : "30/07/28 12:25PM",
+		  "visible": false
+        },
+        {
+          "Location" : "MUMBAI",
+          "Date and Time" : "30/07/28 11:55PM",
+          "visible": true
+        }
+      ];
+      oThis.getView().setModel(new JSONModel(oModel), "orders");
+      console.log("done");
+    },
+    
+    onOrderTracking: function(){
+    	  var oThis = this;
+	      if (!oThis._oOrderDialog) {
+	        oThis._oOrderDialog = sap.ui.xmlfragment("com.sap.technophilia.courier.fragment.OrderTracking", oThis);
+	        oThis._oOrderDialog.addStyleClass("sapUiSizeCompact");
+	        oThis.getView().addDependent(oThis._oOrderDialog);
+	      }
+	      oThis._oOrderDialog.open();
+	      oThis._fetchTracker();
+    },
+    
+    onOrderTrackingClose: function(){
+    	var oThis = this;
+      oThis._oOrderDialog.close();
     }
   });
 });
