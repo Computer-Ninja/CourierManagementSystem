@@ -1,0 +1,23 @@
+<mvc:View controllerName="com.sap.technophilia.courier.controller.Manager" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
+  <Page title="Manager Page" showNavButton="true" navButtonPress="onNavBack">
+    <FlexBox class="centerposition">
+    <HBox>
+        <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+          header="Complaints List"
+          mode="HeaderMode"
+          press="onUpdateOrder">
+        </GenericTile>
+        <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+          header="Reimbursement Claims List"
+          mode="HeaderMode"
+          press="onCreateOrder">
+        </GenericTile>
+        <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+          header="Update Policies"
+          mode="HeaderMode"
+          press="onUpdatePolicy">
+        </GenericTile>
+      </HBox>
+    </FlexBox>
+  </Page>
+</mvc:View>

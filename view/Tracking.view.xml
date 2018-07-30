@@ -1,0 +1,20 @@
+<mvc:View controllerName="com.sap.technophilia.courier.controller.Tracking" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
+  <Page title="Courier Tracking">
+    <headerContent>
+      <Button type="Default" text="Login" press="onLogin" icon="sap-icon://visits" />
+    </headerContent>
+    <content>
+      <VBox class="centerposition" >
+        <Input id="TrackingID" type="Text" required="true" placeholder="Tracking ID"
+                valueState="None" valueStateText="Invalid Tracking ID" />
+        <Button width="100%" type="Emphasized" text="Track Courier" press="onTrackCourier" icon="sap-icon://locate-me"/>
+      </VBox>
+    </content>
+    <footer>
+        <Toolbar>
+          <ToolbarSpacer/>
+          <Button type="Default" text="Policy" press="onPolicyCheck" icon="sap-icon://drill-down" />
+        </Toolbar>
+    </footer>
+  </Page>
+</mvc:View>

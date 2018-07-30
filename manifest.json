@@ -1,0 +1,109 @@
+{
+  "_version": "1.5.0",
+  "sap.app": {
+    "id": "com.sap.technophilia.courier",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "title": "Courier Tracking",
+    "description": "Courier Tracking Service"
+  },
+
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    },
+    "supportedThemes": [
+      "sap_hcb",
+      "sap_belize"
+    ],
+    "fullWidth": true
+  },
+
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "com.sap.technophilia.courier.view.App",
+      "type": "XML"
+    },
+    "dependencies": {
+      "minUI5Version": "1.30.0",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.m": {},
+        "sap.ui.layout": {},
+        "sap.uxap": {},
+        "sap.f": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.sap.technophilia.courier.i18n.i18n"
+        }
+      }
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "com.sap.technophilia.courier.view",
+        "controlId": "mainApp",
+        "controlAggregation": "pages",
+        "transition": "slide",
+        "bypassed": {
+          "target": "notFound"
+        },
+        "clearTarget": true
+      },
+      "routes": [{
+          "pattern": "",
+          "name": "tracking",
+          "target": "Tracking"
+        },
+        {
+          "pattern": "employee",
+          "name": "employee",
+          "target": "Employee"
+        },
+        {
+          "pattern": "manager",
+          "name": "manager",
+          "target": "Manager"
+        }
+      ],
+      "targets": {
+        "Tracking": {
+          "viewName": "Tracking",
+          "viewLevel": 0
+        },
+        "Employee": {
+          "viewName": "Employee",
+          "viewLevel": 1
+        },
+        "Manager": {
+          "viewName": "Manager",
+          "viewLevel": 1
+        }
+      }
+    }
+  }
+
+}
