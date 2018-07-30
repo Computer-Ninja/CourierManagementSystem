@@ -3,12 +3,23 @@
     <content>
       <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0" columnsL="2" columnsM="2">
         <f:content>
-          <Label text="Type of Item"/>
-          <Input required="true" type="Text" value="" valueState="" valueStateText=""/>
           <Label text="Source"/>
-          <Input required="true" type="Text" value="" valueState="" valueStateText=""/>
+          <Input required="true" type="Text" value="" valueState="" valueStateText="" id="source"/>
           <Label text="Destination"/>
-          <Input required="true" type="Text" value="" valueState="" valueStateText=""/>
+          <Input required="true" type="Text" value="" valueState="" valueStateText="" id="destination"/>
+          <Label text="Source Email"/>
+          <Input type="Text" value="" valueState="" valueStateText="" id="semail"/>
+          <Label text="Destination Email"/>
+          <Input type="Text" value="" valueState="" valueStateText="" id="demail"/>
+          <Label text="Weight"/>
+          <Input required="true" type="Text" value="" valueState="" valueStateText="" id="weight"/>
+          <Label text="Courier Type"/>
+          <ComboBox required="true" selectedKey="" id="type">
+            <items>
+              <core:ListItem key="speed" text="Speed Post"/>
+              <core:ListItem key="regular" text="Regular"/>
+            </items>
+          </ComboBox>
           <Label text="Cost"/>
           <Input required="true" type="Text" value="" valueState="" valueStateText=""/>
         </f:content>

@@ -32,39 +32,29 @@ sap.ui.define([
     
     onPolicyCheck: function() {
       var oThis = this;
-      if (!oThis._oLoginDialog) {
-        oThis._oLoginDialog = sap.ui.xmlfragment("com.sap.technophilia.courier.fragment.Policy", oThis);
-        oThis._oLoginDialog.addStyleClass("sapUiSizeCompact");
-        oThis.getView().addDependent(oThis._oLoginDialog);
+      if (!oThis._oPolicyDialog) {
+        oThis._oPolicyDialog = sap.ui.xmlfragment("com.sap.technophilia.courier.fragment.Policy", oThis);
+        oThis._oPolicyDialog.addStyleClass("sapUiSizeCompact");
+        oThis.getView().addDependent(oThis._oPolicyDialog);
       }
-      oThis._oLoginDialog.open();
+      oThis._oPolicyDialog.open();
     },
 
-    /**
-     *
-     * Event Handler - (Temporary Button) To go to the Manager's Page
-     * @public
-     */
+	onPolicyClose: function(){
+	  var oThis = this;
+      oThis._oPolicyDialog.close();
+	},
+
     onManagerLogin: function() {
       var oThis = this;
       oThis._router.navTo("manager");
     },
 
-    /**
-     *
-     * Event Handler - (Temporary Button) To go to the Employee's Page
-     * @public
-     */
     onEmployeeLogin: function() {
       var oThis = this;
       oThis._router.navTo("employee");
     },
 
-    /**
-     *
-     * Event Handler - On press of cancel in login dialog
-     * @public
-     */
     onLoginCancel: function() {
       var oThis = this;
       oThis._oLoginDialog.close();

@@ -4,9 +4,19 @@
       <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0" columnsL="2" columnsM="2">
         <f:content>
           <Label text="Tracking ID"/>
-          <Input required="true" type="Text" value="" valueState="" valueStateText=""/>
-          <Label text="Location"/>
-          <Input required="true" type="Text" value="" valueState="" valueStateText=""/>
+          <Input required="true" type="Text" value="" valueState="" valueStateText="" id="tracker"/>
+          <Label text="Current Location"/>
+          <Input required="true" type="Text" value="" valueState="" valueStateText="" id="location"/>
+          <Label text="Status"/>
+          <ComboBox required="true" selectedKey="" id="status">
+            <items>
+              <core:ListItem key="transit" text="In Transit"/>
+              <core:ListItem key="ofd" text="Out For Delivery"/>
+              <core:ListItem key="delivered" text="Delivered"/>
+            </items>
+          </ComboBox>
+          <Label text="Delivery Employee"/>
+          <Input type="Text" value="" valueState="" valueStateText="" id="deliveryemp"/>
         </f:content>
       </f:SimpleForm>
     </content>
