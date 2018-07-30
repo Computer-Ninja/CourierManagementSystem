@@ -15,7 +15,7 @@
         <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
           header="Update Policies"
           mode="HeaderMode"
-          press="onUpdatePolicy">
+          press="onUpdatePolicy"> 
         </GenericTile>
       </HBox>
     </FlexBox>

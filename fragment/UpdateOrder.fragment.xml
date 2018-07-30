@@ -22,7 +22,7 @@
     </content>
     <buttons>
       <Button text="Update" tooltip="Update" press="onUpdateOrderOkay"/>
-      <Button text="Cancel" tooltip="Cancel" press="onUpdateOrderCancel"/>
+      <Button text="Cancel" tooltip="Cancel" press="onUpdateOrderCancel"/> 
     </buttons>
   </Dialog>
 </core:FragmentDefinition>

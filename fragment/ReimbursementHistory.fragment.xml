@@ -25,7 +25,7 @@
             <Text text="{ReimbursementHistory>Time}"/>
             <Text text="{ReimbursementHistory>Status}"/>
           </ColumnListItem>
-        </items>
+        </items> 
       </Table>
     </content>
     <buttons>

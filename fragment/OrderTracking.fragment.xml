@@ -10,7 +10,7 @@
 	        <headerToolbar>
 	        </headerToolbar>
 	        <columns>
-	          <Column>
+	          <Column> 
 	          	<Label text=""/>
 	          </Column>
 	          <Column>

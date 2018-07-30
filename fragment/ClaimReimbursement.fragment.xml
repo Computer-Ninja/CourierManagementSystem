@@ -11,7 +11,7 @@
               <core:ListItem key="Mobile" text="Mobile"/>
             </items>
           </ComboBox>
-          <Label text="Cost"/>
+          <Label text="Cost" />
           <Input required="true" type="Text" value="" valueState="" valueStateText=""/>
           <u:FileUploader
             uploadUrl="upload/"

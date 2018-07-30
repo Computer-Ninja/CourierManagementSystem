@@ -20,7 +20,7 @@
               <core:ListItem key="regular" text="Regular"/>
             </items>
           </ComboBox>
-          <Label text="Cost"/>
+          <Label text="Cost" />
           <Input required="true" type="Text" value="" valueState="" valueStateText=""/>
         </f:content>
       </f:SimpleForm>
