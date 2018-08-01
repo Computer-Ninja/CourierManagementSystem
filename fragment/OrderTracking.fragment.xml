@@ -1,37 +1,43 @@
-<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
-	xmlns:mvc="sap.ui.core.mvc">
-  <Dialog title="Login Dialog" draggable="true">
-    <content>
-    	<HBox>
-    		<Label text="Tracking ID : " id="tid"/>
-    		<Label text="Status : " id="status"/>
-    	</HBox>
-		 <Table items="{orders>/}">
-	        <headerToolbar>
-	        </headerToolbar>
-	        <columns>
-	          <Column> 
-	          	<Label text=""/>
-	          </Column>
-	          <Column>
-	            <Label text="Location"/>
-	          </Column>
-	          <Column>
-	            <Label text="Time Stamp"/>
-	          </Column>
-	        </columns>
-	        <items>
-	          <ColumnListItem>
-	          	<HBox class="led-red" visible="{orders>visible}"></HBox>
-	            <Text text="{orders>Location}"/>
-	            <Text text="{orders>Date and Time}"/>
-	          </ColumnListItem>
-	        </items>
-    	</Table>
-    </content>
-    <buttons>
-    	<Button text="Raise Dispute" tooltip="Dispute" press="onRaiseDispute"/>
-    	<Button text="OK" tooltip="Policy" press="onOrderTrackingClose"/>
-    </buttons>
-  </Dialog>
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc">
+	<Dialog title="Courier Information" draggable="true">
+		<content>
+			<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+				<items>
+					<HBox class="sapUiMediumMarginBegin sapUiSmallMarginTopBottom">
+						<Label text="Tracking ID : "/>
+						<Label text="{CourierInfo>/TrackId}"/>
+					</HBox>
+					<HBox class="sapUiMediumMarginEnd sapUiSmallMarginTopBottom">
+						<Label text="Status : "/>
+						<Label text="{CourierInfo>/OStatus}"/>
+					</HBox>
+				</items>
+			</FlexBox>
+			<Table items="{orders>/}">
+				<headerToolbar></headerToolbar>
+				<columns>
+					<Column>
+						<Label text=""/>
+					</Column>
+					<Column>
+						<Label text="Location"/>
+					</Column>
+					<Column>
+						<Label text="Time Stamp"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<HBox class="led-red" visible="{orders>visible}"></HBox>
+						<Text text="{orders>Location}"/>
+						<Text text="{orders>Date and Time}"/>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<buttons>
+			<Button text="Raise Dispute" tooltip="Dispute" press="onRaiseDispute"/>
+			<Button text="OK" tooltip="Policy" press="onOrderTrackingClose"/>
+		</buttons>
+	</Dialog>
 </core:FragmentDefinition>

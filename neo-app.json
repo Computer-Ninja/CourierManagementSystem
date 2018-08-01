@@ -37,7 +37,7 @@
       "description": "SAPUI5 Test Resources"
     },
     {  
-		"path": "/sap/opu/odata/sap/ZCOURIER_SERVICE_SRV/",
+		"path": "/destination/courier/",
 		"target": {
 			"type": "destination",
 			"name": "courierService",
