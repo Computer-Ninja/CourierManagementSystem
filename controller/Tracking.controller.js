@@ -94,6 +94,43 @@ sap.ui.define([
 	      }
 	      oThis._oOrderDialog.open();
 	      oThis._fetchTracker();
+	      
+	      
+			var jurl = "/sap/opu/odata/sap/ZCOURIER_SERVICE_SRV/CourierSet('TRACK01')?$format=json";
+			sap.ui.core.BusyIndicator.show(0);
+			var that=this;
+				jQuery.ajax({
+			// 				beforeSend: function (xhr) {
+			//     //xhr.setRequestHeader ("Authorization", "Basic " + btoa("TRAIN01" + ":" + "abcdef"));
+			// },
+				
+			headers: {
+			    contentType: "application/json; charset=utf-8",
+			    "timeout":300000
+			  },
+				url: jurl,
+				async: true,
+				TYPE: 'GET',
+				method: 'GET',
+				dataType: 'text',
+				success: function(data) {
+				sap.m.MessageToast.show("success");
+				console.log(data);
+				sap.ui.core.BusyIndicator.hide();
+				},
+				error: function(error) {
+				sap.ui.core.BusyIndicator.hide();
+	            	console.log(error);
+					sap.m.MessageToast.show("error");
+				},
+					timeout:60000
+
+			});
+ 
+
+	      
+	      
+	      
     },
     
     onOrderTrackingClose: function(){
