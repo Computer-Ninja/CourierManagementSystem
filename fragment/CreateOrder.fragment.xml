@@ -11,16 +11,16 @@
           <Input type="Text" value="" valueState="" valueStateText="" id="semail"/>
           <Label text="Destination Email"/>
           <Input type="Text" value="" valueState="" valueStateText="" id="demail"/>
-          <Label text="Weight"/>
+          <Label text="Weight(kg)"/>
           <Input required="true" type="Text" value="" valueState="" valueStateText="" id="weight"/>
           <Label text="Courier Type"/>
           <ComboBox required="true" selectedKey="" id="type">
             <items>
-              <core:ListItem key="speed" text="Speed Post"/>
+              <core:ListItem key="speed" text="SpeedPost"/>
               <core:ListItem key="regular" text="Regular"/>
             </items>
           </ComboBox>
-          <Label text="Cost" />
+          <Label text="Cost(INR)" />
           <Input required="true" type="Text" value="" valueState="" valueStateText="" id="cost"/>
         </f:content>
       </f:SimpleForm>

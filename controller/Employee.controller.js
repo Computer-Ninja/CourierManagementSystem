@@ -59,7 +59,7 @@ sap.ui.define([
       var weight = sap.ui.getCore().byId('weight').getValue();
       var type = sap.ui.getCore().byId('type').getValue();
       var cost = sap.ui.getCore().byId('cost').getValue();
-      var status = "In Transit";
+      var cstatus = "In Transit";
       if(semail === ""){
       	semail="N/A";
       }
@@ -94,7 +94,7 @@ sap.ui.define([
 	    			odata.create('/CourierSet', 
                         {
                                        "TrackId" : "Dummy",
-									    "OStatus" : status,
+									    "OStatus" : cstatus,
 									    "FromEmail" : semail,
 									    "FromMob" : 0,
 									    "FromAddress" : sourceaddress,
@@ -110,9 +110,15 @@ sap.ui.define([
 	                                    success: function(oData, oResponse) {
 	                                            console.log(oResponse);
 	                                            MessageToast.show("Order Creation Successfull");
-	                                            /*if(semail !== "N/A"){
+	                                            if(semail !== "N/A"){
 	                                            	oThis.sendEmail(semail,oResponse.data.TrackId);
-	                                            }*/
+	                                            	console.log("mail sent");
+	                                            }
+	                                            if(demail !== "N/A"){
+	                                            	oThis.sendEmail(semail,oResponse.data.TrackId);
+	                                            	console.log("mail sent");
+	                                            }
+	                                            oThis.onCreateOrderCancel();
 	                                    },
 	                                    failure: function(){
 	                                    	MessageToast.show("Order Creation Failure");
