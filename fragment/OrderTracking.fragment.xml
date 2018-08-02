@@ -13,7 +13,7 @@
 					</HBox>
 				</items>
 			</FlexBox>
-			<Table items="{orders>/}">
+			<Table items="{CourierInfo>/}">
 				<headerToolbar></headerToolbar>
 				<columns>
 					<Column>
@@ -28,9 +28,9 @@
 				</columns>
 				<items>
 					<ColumnListItem>
-						<HBox class="led-red" visible="{orders>visible}"></HBox>
-						<Text text="{orders>Location}"/>
-						<Text text="{orders>Date and Time}"/>
+						<!--<HBox class="led-red" visible="{orders>visible}"></HBox>-->
+						<Text text="{CourierInfo>FromEmail}" />
+						<Text text="{CourierInfo>OStatus}"/>
 					</ColumnListItem>
 				</items>
 			</Table>

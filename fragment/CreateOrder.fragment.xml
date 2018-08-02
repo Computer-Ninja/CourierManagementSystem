@@ -21,12 +21,12 @@
             </items>
           </ComboBox>
           <Label text="Cost" />
-          <Input required="true" type="Text" value="" valueState="" valueStateText=""/>
+          <Input required="true" type="Text" value="" valueState="" valueStateText="" id="cost"/>
         </f:content>
       </f:SimpleForm>
     </content>
     <buttons>
-      <Button text="Create" tooltip="Create" press="onCreateOrder"/>
+      <Button text="Create" tooltip="Create" press="onCreateOrderOkay"/>
       <Button text="Cancel" tooltip="Cancel" press="onCreateOrderCancel"/>
     </buttons>
   </Dialog>

@@ -64,7 +64,6 @@ sap.ui.define([
 		},
 
 		_fetchTracker: function() {
-			var tid = this.getView().byId("TrackingID").getValue();
 			var oThis = this;
 			var oModel = [{
 				"Location": "CHENNAI",
@@ -84,23 +83,24 @@ sap.ui.define([
 		},
 
 		onOrderTracking: function() {
+			var tid = this.getView().byId("TrackingID").getValue();
 			var oThis = this;
 			if (!oThis._oOrderDialog) {
 				oThis._oOrderDialog = sap.ui.xmlfragment("com.sap.technophilia.courier.fragment.OrderTracking", oThis);
 				oThis._oOrderDialog.addStyleClass("sapUiSizeCompact");
 				oThis.getView().addDependent(oThis._oOrderDialog);
 			}
-			oThis._oOrderDialog.open();
-			oThis._fetchTracker();
-			
-			var trackingId = 'TRACK01';
-			var url = "/destination/courier/CourierSet(\'" + trackingId + "\')?format=json";
+		
+			var url = "/destination/courier/CourierSet(\'" + tid + "\')?format=json";
 			Api.get(url)
 				.done(function(data) {
+					console.log(data);
 					oThis.getView().setModel(new JSONModel(data.d), "CourierInfo");	
+					oThis._oOrderDialog.open();
+					oThis._fetchTracker();
 				})
 				.fail(function() {
-					MessageToast.show("Tracking Service Failed");
+					MessageToast.show("Order ID May be Incorrect");
 				});
 		},
 
