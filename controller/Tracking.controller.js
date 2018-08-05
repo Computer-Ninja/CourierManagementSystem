@@ -90,12 +90,12 @@ sap.ui.define([
 				oThis._oOrderDialog.addStyleClass("sapUiSizeCompact");
 				oThis.getView().addDependent(oThis._oOrderDialog);
 			}
-		
+
 			var url = "/destination/courier/CourierSet(\'" + tid + "\')?format=json";
 			Api.get(url)
 				.done(function(data) {
 					console.log(data);
-					oThis.getView().setModel(new JSONModel(data.d), "CourierInfo");	
+					oThis.getView().setModel(new JSONModel(data.d), "CourierInfo");
 					oThis._oOrderDialog.open();
 					oThis._fetchTracker();
 				})
@@ -107,6 +107,19 @@ sap.ui.define([
 		onOrderTrackingClose: function() {
 			var oThis = this;
 			oThis._oOrderDialog.close();
+		},
+
+		onLoginOkay: function() {
+			var oThis = this;
+			var url = "/destination/courier/"; // login service url
+			
+			Api.get(url)
+				.done(function(data) {
+					data.user === 'Manager' ? oThis.onManagerLogin() : oThis.onEmployeeLogin();
+				})
+				.fail(function() {
+					MessageToast.show("Login Service Failed");
+				});
 		}
 	});
 });

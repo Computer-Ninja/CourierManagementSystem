@@ -13,6 +13,7 @@
     <buttons>
       <Button text="Employee" tooltip="Employee" press="onEmployeeLogin"/>
       <Button text="Manager" tooltip="Manager" press="onManagerLogin"/>
+      <Button text="Login" tooltip="Login" press="onLogin"/>
       <Button text="Cancel" tooltip="Cancel" press="onLoginCancel"/>
     </buttons>
   </Dialog>

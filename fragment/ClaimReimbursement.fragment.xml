@@ -13,10 +13,6 @@
           </ComboBox>
           <Label text="Cost" />
           <Input required="true" type="Text" value="" valueState="" valueStateText=""/>
-          <u:FileUploader
-            uploadUrl="upload/"
-            tooltip="Upload your file"
-            uploadComplete="onUpload"/>
         </f:content>
       </f:SimpleForm>
     </content>
